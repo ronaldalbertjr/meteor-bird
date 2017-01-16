@@ -24,3 +24,5 @@ mrt:bootstrap-3
 session
 accounts-password
 accounts-ui
+accounts-facebook
+service-configuration
