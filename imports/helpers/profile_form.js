@@ -7,7 +7,9 @@ Template.profileForm.events({
 	"submit form": function(e, template){
 		e.preventDefault();
 		var inputs = template.findAll("input");
-		Meteor.users.update({_id: this.userId }, {$set: {"profile.name": inputs[0].value, "profile.about": inputs[1].value} });
+		prof = {name: inputs[0].value, about: inputs[1].value};
+		Meteor.users.update({_id: Meteor.userId()}, {$set: {profile: prof}});
 		Session.set("editProfile", false);
+		console.log(Meteor.user()['profile'].name);
 	}
 });
