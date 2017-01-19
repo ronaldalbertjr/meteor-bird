@@ -1,7 +1,7 @@
 import { ServiceConfiguration } from 'meteor/service-configuration';
 
 ServiceConfiguration.configurations.upsert(
-  { service: "weibo" },
+  { service: "facebook" },
   {
     $set: {
       clientId: "125336701305913",
