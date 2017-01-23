@@ -1,6 +1,14 @@
 import { Accounts } from 'meteor/accounts-base';
 
 Accounts.onCreateUser(function(options, user){
-	user['profile'] = options.profile;
+	if(user.services.facebook)
+	{
+		var facebook = user.services.facebook;
+		user['profile'] = { name: facebook.name };
+	}
+	else
+	{
+		user['profile'] = options.profile;
+	}
 	return user;
 });

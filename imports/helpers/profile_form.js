@@ -10,6 +10,5 @@ Template.profileForm.events({
 		prof = {name: inputs[0].value, about: inputs[1].value};
 		Meteor.users.update({_id: Meteor.userId()}, {$set: {profile: prof}});
 		Session.set("editProfile", false);
-		console.log(Meteor.user()['profile'].name);
 	}
 });
